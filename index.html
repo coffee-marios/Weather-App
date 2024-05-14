@@ -12,30 +12,35 @@
 <body>
     <div id="weather-app">
 
-        <div id="data-weather">
-            <div class="day_data">
-                <p>TODAY</p>
-                <img id="icon-weather">
-
-                <p id="myTemperature">&deg;</p>
-                <p id="myCondition"></p>
-
-
-            </div>
-            <div class="day_data">
-                <p>TOMORROW</p>
-                <img id="icon-weather_tom">
-                <p id="myTemperature_tom">&deg;</p>
-                <p id="myCondition_tom"></p>
-
+        <div id="weather-container">
+            <div id="data-weather">
+                <div class="day_data">
+                    <p>TODAY</p>
+                    <img id="icon-weather">
+                    <p id="myTemperature">&deg;</p>
+                    <p id="myCondition"></p>
+                </div>
+                <div class="day_data">
+                    <p>TOMORROW</p>
+                    <img id="icon-weather_tom">
+                    <p id="myTemperature_tom">&deg;</p>
+                    <p id="myCondition_tom"></p>
+                </div>
 
             </div>
+            <div id="location">
+                <p id="myLocation"></p>
+            </div>
+        </div>
+        <br>
+
+        <div id="search-city">
+            <search>
+                <label for="query">Enter a city:</label>
+                <input id="query" placeholder="London" type="search" />
+            </search>
 
         </div>
-        <div id="location">
-            <p id="myLocation"></p>
-        </div>
-
     </div>
 
 </body>

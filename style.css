@@ -9,6 +9,13 @@ body {
 }
 
 #weather-app {
+    padding: 1rem;
+    background-color: rgb(206, 232, 5);
+    width: fit-content;
+    margin: 3rem auto auto auto;
+}
+
+#weather-container {
     background-color: rgb(160, 95, 96);
     width: fit-content;
     display: flex;
@@ -16,7 +23,7 @@ body {
     align-content: flex-start;
     justify-content: center;
     align-items: stretch;
-    margin: 3rem auto;
+    margin: auto;
 }
 
 #data-weather {
@@ -32,4 +39,11 @@ body {
 
 #location {
     outline: 1px solid black;
+}
+
+#search-city {
+    background-color: rgb(188, 232, 8);
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 25%;
 }

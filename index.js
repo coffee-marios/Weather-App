@@ -12,10 +12,24 @@ const myCondition_tom = document.getElementById("myCondition_tom");
 
 //
 
-async function get_weather_today() {
+const city = document.getElementById("query");
+
+city.addEventListener("keydown", () => {
+  if (event.keyCode === 13) {
+    const new_city = city.value;
+    try {
+      get_weather_today(new_city);
+      get_weather_tomorrow(new_city);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+});
+
+async function get_weather_today(city = "London") {
   try {
     const response = await fetch(
-      "http://api.weatherapi.com/v1/current.json?key=3e09bdd8cabd408d9ec63431240805&q=London&aqi=no",
+      `http://api.weatherapi.com/v1/current.json?key=3e09bdd8cabd408d9ec63431240805&q=${city}&aqi=no`,
       {
         mode: "cors",
       }
@@ -33,10 +47,10 @@ async function get_weather_today() {
   }
 }
 
-async function get_weather_tomorrow() {
+async function get_weather_tomorrow(city = "London") {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=3e09bdd8cabd408d9ec63431240805&q=London&days=1&aqi=no&alerts=no
+      `http://api.weatherapi.com/v1/forecast.json?key=3e09bdd8cabd408d9ec63431240805&q=${city}&days=1&aqi=no&alerts=no
       `
     );
     const data_weather_tom = await response.json();

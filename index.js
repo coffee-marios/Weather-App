@@ -29,14 +29,12 @@ city.addEventListener("keydown", () => {
 async function get_weather_today(city = "London") {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=3e09bdd8cabd408d9ec63431240805&q=${city}&aqi=no`,
-      {
-        mode: "cors",
-      }
+      `https://api.weatherapi.com/v1/current.json?key=3e09bdd8cabd408d9ec63431240805&q=${city}&aqi=no
+      `
     );
 
     const data_weather = await response.json();
-    // console.log(data_weather.current.temp_c);
+
     const temperature_celsius = data_weather.current.temp_c;
     iconWeather.src = data_weather.current.condition.icon;
     myCondition.textContent = data_weather.current.condition.text;
@@ -50,11 +48,11 @@ async function get_weather_today(city = "London") {
 async function get_weather_tomorrow(city = "London") {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=3e09bdd8cabd408d9ec63431240805&q=${city}&days=1&aqi=no&alerts=no
+      `https://api.weatherapi.com/v1/forecast.json?key=3e09bdd8cabd408d9ec63431240805&q=${city}&days=1&aqi=no&alerts=no
       `
     );
     const data_weather_tom = await response.json();
-    console.log(data_weather_tom);
+
     const tomorrow_forecast = data_weather_tom.forecast.forecastday[0].day;
 
     iconWeather_tom.src = tomorrow_forecast.condition.icon;
